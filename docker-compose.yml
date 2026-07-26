@@ -1,0 +1,38 @@
+# Member 6 (Integration/DevOps) owns this file.
+# Brings up MongoDB + backend + ai-service together for local dev.
+# Frontend is run separately via `npm run dev` (Vite dev server) for hot reload.
+#
+# Usage: docker compose up --build
+
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  ai-service:
+    build: ./ai-service
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./ai-service:/app
+
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+      - AI_SERVICE_URL=http://ai-service:8001
+    depends_on:
+      - mongo
+      - ai-service
+    volumes:
+      - ./backend:/app
+
+volumes:
+  mongo_data:

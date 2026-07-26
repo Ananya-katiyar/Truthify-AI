@@ -1,0 +1,32 @@
+[
+  {
+    "id": "fact_001",
+    "source": "WHO",
+    "topic": "vaccines",
+    "text": "Vaccines undergo rigorous multi-phase clinical trials before approval and are continuously monitored for safety after release."
+  },
+  {
+    "id": "fact_002",
+    "source": "NASA",
+    "topic": "climate",
+    "text": "Global average temperatures have risen approximately 1.1 degrees Celsius since the pre-industrial era, based on long-term satellite and ground station data."
+  },
+  {
+    "id": "fact_003",
+    "source": "Election Commission",
+    "topic": "elections",
+    "text": "Electronic voting machines used in national elections undergo certification, mock polls, and physical audits before and after voting."
+  },
+  {
+    "id": "fact_004",
+    "source": "CDC",
+    "topic": "health",
+    "text": "5G network signals operate at frequencies that do not have enough energy to damage DNA or cause biological harm."
+  },
+  {
+    "id": "fact_005",
+    "source": "Reuters Fact Check",
+    "topic": "general",
+    "text": "Claims that spread rapidly on social media without a named, verifiable source should be treated as unverified until confirmed by independent reporting."
+  }
+]
