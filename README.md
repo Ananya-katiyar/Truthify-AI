@@ -1,85 +1,231 @@
-<<<<<<< HEAD
-# AI-Based Misinformation Detection and Risk Analysis System
+## Truthify-AI
 
-A RAG + Agentic AI system that analyzes text content (social posts, articles),
-fact-checks claims against a verified knowledge base, and produces a risk
-score with an explanation. See `docs/architecture.md` for the full data flow
-and team task breakdown.
+**AI-Based Misinformation Detection and Risk Analysis System using RAG and Agentic AI**
+
+Truthify-AI analyzes news articles, social media posts, and user-submitted content to detect misinformation, assess intent and bias, verify claims against trusted sources, and assign explainable risk scores — helping flag misleading or harmful content before it spreads.
+
+---
+
+## Problem Statement
+
+- Rapid spread of fake news and misinformation
+- AI-generated propaganda influencing public opinion
+- Difficulty verifying the authenticity of information
+- Lack of real-time tools to detect misleading or harmful content
+- Potential risks to national security, elections, and public trust
+
+## Proposed Solution
+
+Truthify-AI is an AI-powered system that:
+
+- Accepts input from social media posts, news articles, and user-submitted content
+- Uses **Generative AI** to analyze intent, tone, and bias
+- Uses **RAG (Retrieval-Augmented Generation)** to verify claims against trusted, verified sources
+- Uses **Agentic AI** to reason over evidence, assign risk levels, and generate explanations
+- Surfaces risk scores, supporting evidence, and alerts for high-risk content via a dashboard
+
+## Key Features
+
+- Intent and tone detection (informative vs. manipulative)
+- Fact-checking using RAG with verified knowledge sources
+- Risk-based classification (Low / Medium / High)
+- Explainable AI — reasoning and supporting evidence for every verdict
+- Dashboard for monitoring flagged content
+- Alert system for high-risk misinformation
+- Human-in-the-loop validation for critical decisions
+
+---
+
+## System Architecture
+```
+┌─────────────┐      ┌──────────────┐       ┌────────────────────┐
+│ Frontend    │ ───▶│ Backend       | ───▶ │ AI Microservice    │
+│ (React)     │ ◀───│ (FastAPI)     │ ◀─── │ (Python)           │
+└─────────────┘      └──────────────┘       └────────────────────┘
+                          │ │
+                          ▼ ▼
+            ┌─────────────┐ ┌───────────────┐
+            │ PostgreSQL  │ │ ChromaDB      │
+            │ (content,   │ │(vector store, │
+            │ scores,     │ │verified facts)│
+            │ history)    │ └───────────────┘
+            └─────────────┘
+```
+**Flow:** Content submitted → preprocessing & claim extraction → intent/tone/bias classification → RAG retrieval & fact comparison → agentic decision engine (risk scoring + explanation) → stored & surfaced on dashboard, with alerts for high-risk content.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React + Vite + Tailwind CSS |
+| Backend API | FastAPI (Python) |
+| Database | PostgreSQL |
+| Vector Store | ChromaDB |
+| Embeddings | sentence-transformers (`all-MiniLM-L6-v2`) |
+| Classification (intent/tone/bias) | HuggingFace Transformers (RoBERTa fine-tunes) |
+| LLM (RAG comparison + explanations) | Groq API (Llama 3.3 / 4) |
+| RAG Orchestration | LangChain |
+| Agent Framework | LangGraph |
+| Containerization | Docker + docker-compose |
+| CI/CD | GitHub Actions |
+| Deployment | Render (backend + PostgreSQL), Vercel (frontend) |
+
+---
 
 ## Project Structure
-
 ```
 misinfo-system/
-├── frontend/       React dashboard (Member 5)
-├── backend/        FastAPI API layer + MongoDB (Member 4)
-├── ai-service/      Python AI microservice (Members 1, 2, 3)
-│   ├── preprocessing/   claim extraction (Member 2)
-│   ├── nlp/              intent/tone/type classification (Member 2)
-│   ├── rag/               FAISS vector store + fact-checking (Members 1 & 3)
-│   ├── agent/             risk scoring + orchestration (Member 3)
-│   └── data/verified_sources/   sample verified knowledge base (Member 1)
-├── docs/            architecture notes
-└── docker-compose.yml
+├── ai-service/
+│ ├── agent/ # Agentic decision engine (LangGraph)
+│ │ ├── decision_engine.py
+│ │ └── graph.py
+│ ├── data/
+│ │ └── verified_sources/ # Trusted fact/knowledge data
+│ ├── nlp/ # Intent/tone/bias classification
+│ │ └── classifier.py
+│ ├── preprocessing/ # Claim extraction
+│ │ └── claim_extraction.py
+│ ├── rag/ # Retrieval + fact verification
+│ │ ├── embed_store.py
+│ │ └── fact_check.py
+│ ├── main.py
+│ ├── requirements.txt
+│ └── Dockerfile
+├── backend/
+│ ├── routes/
+│ │ ├── alerts.py
+│ │ └── content.py
+│ ├── database.py
+│ ├── schemas.py
+│ ├── main.py
+│ ├── requirements.txt
+│ └── Dockerfile
+├── frontend/
+│ ├── src/
+│ │ ├── api/client.js
+│ │ ├── components/
+│ │ │ ├── AlertsPanel.jsx
+│ │ │ ├── Dashboard.jsx
+│ │ │ └── SubmitContent.jsx
+│ │ ├── App.jsx
+│ │ └── main.jsx
+│ ├── index.html
+│ ├── package.json
+│ └── vite.config.js
+├── docs/
+│ └── architecture.md
+├── docker-compose.yml
+└── README.md
+```
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.10+
+- Node.js 18+
+- Docker & Docker Compose (recommended)
+- A free Groq API key (https://console.groq.com)
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Ananya-katiyar/Truthify-AI.git
+cd Truthify-AI
 ```
 
-## Quick Start (running everything locally, no Docker)
+### 2. Set up environment variables
 
-### 1. AI Microservice (start this first — it's the core)
+Create a `.env` file in the root directory:
+
+```env
+DATABASE_URL=postgresql://user:password@localhost:5432/truthify
+GROQ_API_KEY=your_groq_api_key_here
+CHROMA_PERSIST_DIR=./ai-service/data/chroma
+```
+
+### 3. Run with Docker
+
+```bash
+docker-compose up --build
+```
+
+This spins up the frontend, backend, AI microservice, and PostgreSQL together.
+
+### 4. Or run services individually
+
+**AI Service**
 ```bash
 cd ai-service
-python -m venv venv && source venv/bin/activate   # or venv\Scripts\activate on Windows
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-python rag/embed_store.py        # builds the FAISS index from sample data
-uvicorn main:app --reload --port 8001
+python main.py
 ```
-Test it: `curl -X POST http://localhost:8001/analyze -H "Content-Type: application/json" -d '{"text": "Scientists SHOCKED as vaccines proven dangerous!"}'`
 
-### 2. MongoDB
-Easiest: `docker run -d -p 27017:27017 mongo:7`
-(Or install MongoDB locally, or use MongoDB Atlas free tier and set `MONGO_URI` in `.env`.)
-
-### 3. Backend
+**Backend**
 ```bash
 cd backend
-python -m venv venv && source venv/bin/activate
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-uvicorn main:app --reload --port 8000
+uvicorn main:app --reload
 ```
 
-### 4. Frontend
+**Frontend**
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-Open http://localhost:5173
 
-## Quick Start (Docker, backend + ai-service + mongo only)
-```bash
-docker compose up --build
+---
+
+## Module Overview
+
+| Module | Responsibility |
+|---|---|
+| Data & Knowledge Base | Collects verified data (news APIs, fact-check DBs, govt sources) and builds the embedding-based vector store |
+| NLP / Content Analysis | Extracts claims from raw text and classifies intent, tone, bias, and content type |
+| RAG & Agentic AI | Retrieves relevant facts, compares against claims, and runs the agentic workflow to score risk and generate explanations |
+| Backend API | Connects frontend, AI microservice, and database; handles alerts and notifications |
+| Frontend Dashboard | Content submission, results display, flagged-content monitoring, and human-in-the-loop review |
+| Integration & DevOps | End-to-end testing, deployment, CI/CD, and documentation |
+
+---
+
+## Roadmap
 ```
-Then run the frontend separately with `npm run dev` (Vite hot-reload works better outside Docker during development).
+- [x] Phase 0 — Setup & planning
+- [x] Phase 1 — Data & knowledge base ingestion pipeline
+- [ ] Phase 2 — Core AI modules (claim extraction, classification, RAG retrieval)
+- [ ] Phase 3 — Agentic decision engine (risk scoring + explanations)
+- [ ] Phase 4 — Backend API
+- [ ] Phase 5 — Frontend dashboard
+- [ ] Phase 6 — Integration & testing
+- [ ] Phase 7 — Deployment & polish
 
-## Current Model Choices (all open-source, no API keys required)
+```
+---
 
-- **Embeddings:** `sentence-transformers/all-MiniLM-L6-v2` (fast, ~80MB, CPU-friendly)
-- **Vector store:** FAISS (local, in-process)
-- **Classification:** `facebook/bart-large-mnli` zero-shot pipeline via HuggingFace `transformers`
-- **Explanation generation:** currently rule-based (see `agent/decision_engine.py`); can be
-  upgraded to a local LLM via Ollama or a HF `text-generation` pipeline
+## Contributors
 
-## Next Steps for the Team
+| Role | Focus Area |
+|---|---|
+| Data & Knowledge Base Engineer | Verified data pipeline, embeddings, vector store |
+| NLP / Content Analysis Engineer | Claim extraction, intent/tone/bias classification |
+| RAG & Agentic AI Engineer | Fact verification, agentic decision engine, risk scoring |
+| Backend Engineer | API layer, database schema, alerts |
+| Frontend Engineer | Dashboard, alerts UI, review interface |
+| Integration, DevOps & Documentation Lead | Testing, deployment, CI/CD, docs |
 
-1. Everyone: clone the repo, get your own service running locally using the Quick Start above.
-2. Member 1: replace `data/verified_sources/sample_facts.json` with real scraped/API-sourced data.
-3. Member 2: swap the naive sentence splitter for spaCy; consider fine-tuning a classifier.
-4. Member 3: port `agent/graph.py` into an actual LangGraph `StateGraph`.
-5. Member 4: add auth, pagination, and real alert notifications.
-6. Member 5: polish the UI, add loading states, add charts (e.g. risk trends over time).
-7. Member 6: set up CI, deploy to a cloud provider, write the final report/demo.
+---
 
-See `docs/architecture.md` for full details and the task/file ownership table.
-=======
-# Truthify-AI
-AI-Based Misinformation Detection and Risk Analysis System using RAG and Agentic AI.
->>>>>>> ad8a1a06a66d7ac7485d76d63170ea8b2c1109c7
+## License
+
+This project is licensed under the MIT License.
+
+---
