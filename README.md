@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI-Based Misinformation Detection and Risk Analysis System
 
 A RAG + Agentic AI system that analyzes text content (social posts, articles),
@@ -78,3 +79,7 @@ Then run the frontend separately with `npm run dev` (Vite hot-reload works bette
 7. Member 6: set up CI, deploy to a cloud provider, write the final report/demo.
 
 See `docs/architecture.md` for full details and the task/file ownership table.
+=======
+# Truthify-AI
+AI-Based Misinformation Detection and Risk Analysis System using RAG and Agentic AI.
+>>>>>>> ad8a1a06a66d7ac7485d76d63170ea8b2c1109c7
