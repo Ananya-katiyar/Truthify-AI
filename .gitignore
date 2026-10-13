@@ -1,22 +1,32 @@
 # Environment
 .env
+*.env
 *.env.local
-
-# Python (ai-service, backend if FastAPI)
-__pycache__/
-*.pyc
+.venv/
 venv/
 env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 *.egg-info/
+ai-service/data/cache/
+
+# Media Uploads & Temp Storage
+backend/uploads/*
+!backend/uploads/.gitkeep
 
 # Node (frontend)
 node_modules/
 frontend/dist/
 frontend/.vite/
 
-# Docker
+# Docker & Logs
 *.log
 
-# OS/Editor
+# OS / Editor
 .DS_Store
 .vscode/
+.idea/

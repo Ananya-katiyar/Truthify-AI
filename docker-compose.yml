@@ -1,6 +1,5 @@
-# Member 6 (Integration/DevOps) owns this file.
-# Brings up MongoDB + backend + ai-service together for local dev.
-# Frontend is run separately via `npm run dev` (Vite dev server) for hot reload.
+# Truthify-AI Full Stack Docker Compose
+# Brings up MongoDB + AI Service + Backend + Frontend
 #
 # Usage: docker compose up --build
 
@@ -33,6 +32,18 @@ services:
       - ai-service
     volumes:
       - ./backend:/app
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_BACKEND_URL=http://localhost:8000
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
 
 volumes:
   mongo_data:

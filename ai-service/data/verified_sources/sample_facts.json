@@ -28,5 +28,275 @@
     "source": "Reuters Fact Check",
     "topic": "general",
     "text": "Claims that spread rapidly on social media without a named, verifiable source should be treated as unverified until confirmed by independent reporting."
+  },
+  {
+    "id": "fact_006",
+    "source": "WHO",
+    "topic": "vaccines",
+    "text": "The MMR vaccine does not cause autism. The original 1998 study claiming a link was retracted due to serious ethical violations and data manipulation."
+  },
+  {
+    "id": "fact_007",
+    "source": "WHO",
+    "topic": "vaccines",
+    "text": "mRNA vaccines do not alter human DNA. The mRNA instructs cells to produce a protein that triggers an immune response, then the mRNA is broken down naturally."
+  },
+  {
+    "id": "fact_008",
+    "source": "CDC",
+    "topic": "vaccines",
+    "text": "Vaccine side effects are generally mild and temporary, such as soreness at the injection site or low-grade fever, and serious adverse events are extremely rare."
+  },
+  {
+    "id": "fact_009",
+    "source": "WHO",
+    "topic": "health",
+    "text": "Antibiotics are effective against bacterial infections but do not work against viral infections such as the common cold or influenza."
+  },
+  {
+    "id": "fact_010",
+    "source": "FDA",
+    "topic": "health",
+    "text": "Drinking bleach or disinfectants is extremely dangerous and can be fatal. These substances should never be consumed to treat any illness."
+  },
+  {
+    "id": "fact_011",
+    "source": "Mayo Clinic",
+    "topic": "health",
+    "text": "Ivermectin is approved for treating certain parasitic infections in humans. Its use for treating COVID-19 is not supported by current scientific evidence from large clinical trials."
+  },
+  {
+    "id": "fact_012",
+    "source": "NASA",
+    "topic": "climate",
+    "text": "Arctic sea ice extent has declined by approximately 13% per decade since satellite measurements began in 1979, consistent with global warming trends."
+  },
+  {
+    "id": "fact_013",
+    "source": "NOAA",
+    "topic": "climate",
+    "text": "Sea levels have risen approximately 8-9 inches since 1880, with the rate of rise accelerating in recent decades due to thermal expansion and ice sheet melting."
+  },
+  {
+    "id": "fact_014",
+    "source": "IPCC",
+    "topic": "climate",
+    "text": "The scientific consensus, supported by over 97% of climate scientists, is that human activities are the primary driver of observed global warming since the mid-20th century."
+  },
+  {
+    "id": "fact_015",
+    "source": "NASA",
+    "topic": "climate",
+    "text": "Carbon dioxide levels in the atmosphere are higher than at any point in at least the past 800,000 years, primarily due to fossil fuel combustion and deforestation."
+  },
+  {
+    "id": "fact_016",
+    "source": "NOAA",
+    "topic": "climate",
+    "text": "Extreme weather events including heatwaves, droughts, and heavy precipitation have increased in frequency and intensity as global temperatures have risen."
+  },
+  {
+    "id": "fact_017",
+    "source": "ECI",
+    "topic": "elections",
+    "text": "Voter fraud in modern democracies with established electoral systems is extremely rare. Studies consistently show rates below 0.001% of votes cast."
+  },
+  {
+    "id": "fact_018",
+    "source": "MIT Election Lab",
+    "topic": "elections",
+    "text": "Mail-in voting has been used safely and securely in the United States for decades, with fraud rates that are negligible according to multiple independent studies."
+  },
+  {
+    "id": "fact_019",
+    "source": "CISA",
+    "topic": "elections",
+    "text": "Election infrastructure in the United States includes multiple layers of security, auditing, and verification to ensure the accuracy and integrity of vote counts."
+  },
+  {
+    "id": "fact_020",
+    "source": "IEEE",
+    "topic": "technology",
+    "text": "5G technology uses radio frequencies similar to those used by previous generations of wireless technology and Wi-Fi. There is no credible scientific evidence linking 5G to health problems."
+  },
+  {
+    "id": "fact_021",
+    "source": "WHO",
+    "topic": "technology",
+    "text": "The International EMF Project has reviewed thousands of studies and found no evidence that exposure to low-level electromagnetic fields from wireless devices is harmful to human health."
+  },
+  {
+    "id": "fact_022",
+    "source": "NIST",
+    "topic": "technology",
+    "text": "Artificial intelligence systems, including large language models, can generate highly convincing but completely fabricated text, images, and videos known as deepfakes."
+  },
+  {
+    "id": "fact_023",
+    "source": "Reuters",
+    "topic": "technology",
+    "text": "Microchips in vaccines are not technologically feasible. Vaccine needles are too small to deliver any existing tracking device, and no such technology has been found in any vaccine."
+  },
+  {
+    "id": "fact_024",
+    "source": "World Bank",
+    "topic": "economics",
+    "text": "Global poverty rates have declined significantly over the past 30 years, from approximately 36% in 1990 to under 10% before the COVID-19 pandemic."
+  },
+  {
+    "id": "fact_025",
+    "source": "IMF",
+    "topic": "economics",
+    "text": "Inflation is influenced by multiple factors including monetary policy, supply chain disruptions, energy prices, and consumer demand, not by any single cause."
+  },
+  {
+    "id": "fact_026",
+    "source": "Federal Reserve",
+    "topic": "economics",
+    "text": "Central banks use interest rate adjustments as a primary tool for managing inflation and economic stability. This is standard monetary policy practiced worldwide."
+  },
+  {
+    "id": "fact_027",
+    "source": "WHO",
+    "topic": "nutrition",
+    "text": "Genetically modified foods currently available on the international market have passed safety assessments and are not likely to present risks for human health."
+  },
+  {
+    "id": "fact_028",
+    "source": "FDA",
+    "topic": "nutrition",
+    "text": "Fluoride is added to public water supplies at carefully controlled low levels to prevent tooth decay. At these levels, it is safe and effective according to extensive research."
+  },
+  {
+    "id": "fact_029",
+    "source": "Harvard Medical School",
+    "topic": "nutrition",
+    "text": "There is no scientific evidence that any food or supplement can cure cancer. Cancer treatment requires evidence-based medical approaches such as surgery, chemotherapy, and radiation."
+  },
+  {
+    "id": "fact_030",
+    "source": "NIH",
+    "topic": "nutrition",
+    "text": "Dietary supplements are not regulated as strictly as prescription drugs. Claims made by supplement manufacturers are not required to be proven before marketing."
+  },
+  {
+    "id": "fact_031",
+    "source": "NASA",
+    "topic": "science",
+    "text": "The Earth is an oblate spheroid, slightly flattened at the poles. This has been confirmed by satellite imagery, physics, and centuries of scientific observation."
+  },
+  {
+    "id": "fact_032",
+    "source": "NASA",
+    "topic": "science",
+    "text": "The Apollo moon landings between 1969 and 1972 are among the most well-documented events in history, with physical evidence including lunar samples and retroreflectors still in use today."
+  },
+  {
+    "id": "fact_033",
+    "source": "Nature Journal",
+    "topic": "science",
+    "text": "Evolution by natural selection is one of the most well-supported theories in science, backed by evidence from genetics, paleontology, comparative anatomy, and direct observation."
+  },
+  {
+    "id": "fact_034",
+    "source": "EPA",
+    "topic": "science",
+    "text": "Chemtrails conspiracy theories are false. The white trails left by aircraft are condensation trails (contrails) formed when hot exhaust meets cold atmospheric air."
+  },
+  {
+    "id": "fact_035",
+    "source": "IAEA",
+    "topic": "science",
+    "text": "Nuclear power plants cannot explode like nuclear bombs. The fuel enrichment levels used in power reactors are far too low to sustain a nuclear detonation."
+  },
+  {
+    "id": "fact_036",
+    "source": "AP Fact Check",
+    "topic": "media",
+    "text": "Out-of-context images and videos are among the most common forms of misinformation on social media. Reverse image searches can often reveal the original context."
+  },
+  {
+    "id": "fact_037",
+    "source": "Reuters",
+    "topic": "media",
+    "text": "Satire and parody content is sometimes shared without the original comedic context, leading people to believe fabricated stories are real news reports."
+  },
+  {
+    "id": "fact_038",
+    "source": "First Draft",
+    "topic": "media",
+    "text": "Manipulated media includes content that has been edited, cropped, slowed down, or sped up to change its meaning or create a false impression of events."
+  },
+  {
+    "id": "fact_039",
+    "source": "Snopes",
+    "topic": "media",
+    "text": "Chain messages and viral forwards frequently contain false or misleading health advice, hoaxes, and scams. Their viral nature does not indicate truthfulness."
+  },
+  {
+    "id": "fact_040",
+    "source": "UN",
+    "topic": "geopolitics",
+    "text": "The United Nations consists of 193 member states and serves as a forum for international cooperation. It does not have authority to override national sovereignty."
+  },
+  {
+    "id": "fact_041",
+    "source": "WHO",
+    "topic": "health",
+    "text": "Natural immunity from infection provides some protection but varies by disease. Vaccination provides a safer way to develop immunity without risking severe illness."
+  },
+  {
+    "id": "fact_042",
+    "source": "NIH",
+    "topic": "health",
+    "text": "Wearing masks can reduce the transmission of respiratory viruses by filtering respiratory droplets and aerosols, as demonstrated by multiple peer-reviewed studies."
+  },
+  {
+    "id": "fact_043",
+    "source": "Johns Hopkins",
+    "topic": "health",
+    "text": "COVID-19 was not created in a laboratory according to the prevailing scientific consensus. Most evidence points to a natural zoonotic origin, though investigations continue."
+  },
+  {
+    "id": "fact_044",
+    "source": "APA",
+    "topic": "science",
+    "text": "Mental health conditions are legitimate medical conditions influenced by biological, psychological, and social factors. They are not signs of personal weakness."
+  },
+  {
+    "id": "fact_045",
+    "source": "UNESCO",
+    "topic": "media",
+    "text": "Media literacy, including the ability to identify misinformation and verify sources, is recognized as an essential skill for citizens in the digital age."
+  },
+  {
+    "id": "fact_046",
+    "source": "Nature Journal",
+    "topic": "science",
+    "text": "Peer review is the standard process for evaluating scientific research before publication. Studies that have not undergone peer review should be interpreted with caution."
+  },
+  {
+    "id": "fact_047",
+    "source": "WHO",
+    "topic": "health",
+    "text": "Herd immunity is achieved when a sufficient percentage of a population becomes immune to a disease, reducing its spread. This threshold varies by disease."
+  },
+  {
+    "id": "fact_048",
+    "source": "NOAA",
+    "topic": "science",
+    "text": "Weather and climate are different concepts. Weather refers to short-term atmospheric conditions, while climate describes long-term patterns over decades or centuries."
+  },
+  {
+    "id": "fact_049",
+    "source": "European Commission",
+    "topic": "technology",
+    "text": "Data privacy regulations such as GDPR give individuals control over their personal data. Technology companies must comply with these laws regarding data collection and use."
+  },
+  {
+    "id": "fact_050",
+    "source": "OECD",
+    "topic": "economics",
+    "text": "Immigration has complex economic effects that vary by context. Research generally shows immigrants contribute to economic growth through labor, entrepreneurship, and innovation."
   }
 ]
